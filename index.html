@@ -553,25 +553,25 @@ footer{flex-direction:column;gap:1rem;text-align:center}
       <div class="booking-icon">🎭</div>
       <div class="booking-title gold-text">Audition Booking</div>
       <div class="booking-desc">Schedule your audition slot with our casting directors. Prepare your portfolio and performance piece.</div>
-      <input type="date" class="date-input" placeholder="Select Date">
-      <input type="time" class="date-input" placeholder="Select Time">
-      <button class="btn-gold" style="width:100%;padding:0.9rem;font-size:0.7rem;letter-spacing:0.2em">Book Audition Slot</button>
+      <input type="date" id="audition_date" class="date-input" placeholder="Select Date">
+      <input type="time" id="audition_time" class="date-input" placeholder="Select Time">
+      <button id="submit_audition_booking" class="btn-gold" style="width:100%;padding:0.9rem;font-size:0.7rem;letter-spacing:0.2em">Book Audition Slot</button>
     </div>
     <div class="booking-card fade-in" style="border-color:rgba(201,168,76,0.4);background:rgba(201,168,76,0.03)">
       <div class="booking-icon">📸</div>
       <div class="booking-title gold-text">Ad Shoot Booking</div>
       <div class="booking-desc">Book our studio or on-location ad shoot services. Premium equipment, experienced crew included.</div>
-      <input type="date" class="date-input">
-      <input type="text" class="date-input" placeholder="Brand / Product Name" style="background:rgba(255,255,255,0.03);border:1px solid rgba(201,168,76,0.2);color:var(--text);font-family:'Montserrat',sans-serif;font-size:0.8rem;padding:0.7rem 1rem;outline:none;width:100%;margin-bottom:1rem">
-      <button class="btn-gold" style="width:100%;padding:0.9rem;font-size:0.7rem;letter-spacing:0.2em">Request Shoot Quote</button>
+      <input type="date" id="ad_shoot_date" class="date-input">
+      <input type="text" id="ad_shoot_brand_name" class="date-input" placeholder="Brand / Product Name" style="background:rgba(255,255,255,0.03);border:1px solid rgba(201,168,76,0.2);color:var(--text);font-family:'Montserrat',sans-serif;font-size:0.8rem;padding:0.7rem 1rem;outline:none;width:100%;margin-bottom:1rem">
+      <button id="submit_ad_shoot_quote" class="btn-gold" style="width:100%;padding:0.9rem;font-size:0.7rem;letter-spacing:0.2em">Request Shoot Quote</button>
     </div>
     <div class="booking-card fade-in">
       <div class="booking-icon">📺</div>
       <div class="booking-title gold-text">Web Series Consult</div>
       <div class="booking-desc">Discuss your web series concept with our creative producers. From script to streaming strategy.</div>
-      <input type="date" class="date-input">
-      <input type="text" class="date-input" placeholder="Project Title" style="background:rgba(255,255,255,0.03);border:1px solid rgba(201,168,76,0.2);color:var(--text);font-family:'Montserrat',sans-serif;font-size:0.8rem;padding:0.7rem 1rem;outline:none;width:100%;margin-bottom:1rem">
-      <button class="btn-gold" style="width:100%;padding:0.9rem;font-size:0.7rem;letter-spacing:0.2em">Schedule Consultation</button>
+      <input type="date" id="web_series_consult_date" class="date-input">
+      <input type="text" id="web_series_project_title" class="date-input" placeholder="Project Title" style="background:rgba(255,255,255,0.03);border:1px solid rgba(201,168,76,0.2);color:var(--text);font-family:'Montserrat',sans-serif;font-size:0.8rem;padding:0.7rem 1rem;outline:none;width:100%;margin-bottom:1rem">
+      <button id="submit_web_series_consultation" class="btn-gold" style="width:100%;padding:0.9rem;font-size:0.7rem;letter-spacing:0.2em">Schedule Consultation</button>
     </div>
   </div>
 </section>
@@ -624,19 +624,19 @@ footer{flex-direction:column;gap:1rem;text-align:center}
       <div class="form-grid">
         <div class="form-group">
           <label class="form-label">Your Name</label>
-          <input type="text" class="form-input" placeholder="Full Name">
+          <input type="text" id="contact_name" class="form-input" placeholder="Full Name">
         </div>
         <div class="form-group">
           <label class="form-label">Phone Number</label>
-          <input type="tel" class="form-input" placeholder="+91 00000 00000">
+          <input type="tel" id="contact_phone" class="form-input" placeholder="+91 00000 00000">
         </div>
         <div class="form-group">
           <label class="form-label">Email Address</label>
-          <input type="email" class="form-input" placeholder="your@email.com">
+          <input type="email" id="contact_email" class="form-input" placeholder="your@email.com">
         </div>
         <div class="form-group">
           <label class="form-label">Inquiry Type</label>
-          <select class="form-select form-input">
+          <select id="contact_inquiry_type" class="form-select form-input">
             <option>Project Production</option>
             <option>Casting Services</option>
             <option>Ad Shoot</option>
@@ -646,10 +646,10 @@ footer{flex-direction:column;gap:1rem;text-align:center}
         </div>
         <div class="form-group full">
           <label class="form-label">Your Message</label>
-          <textarea class="form-textarea" placeholder="Tell us about your project or inquiry..."></textarea>
+          <textarea id="contact_message" class="form-textarea" placeholder="Tell us about your project or inquiry..."></textarea>
         </div>
         <div class="form-group full">
-          <button class="btn-hero-primary" style="width:100%;padding:1.1rem;font-size:0.75rem;letter-spacing:0.25em">Send Message →</button>
+          <button id="submit_contact" class="btn-hero-primary" style="width:100%;padding:1.1rem;font-size:0.75rem;letter-spacing:0.25em">Send Message →</button>
         </div>
       </div>
     </div>
@@ -678,15 +678,15 @@ footer{flex-direction:column;gap:1rem;text-align:center}
     <div class="form-grid">
       <div class="form-group">
         <label class="form-label">Full Name *</label>
-        <input type="text" class="form-input" placeholder="Your full name">
+        <input type="text" id="full_name" class="form-input" placeholder="Your full name">
       </div>
       <div class="form-group">
         <label class="form-label">Age *</label>
-        <input type="number" class="form-input" placeholder="Your age">
+        <input type="number" id="age" class="form-input" placeholder="Your age">
       </div>
       <div class="form-group">
         <label class="form-label">Gender *</label>
-        <select class="form-select form-input">
+        <select id="gender" class="form-select form-input">
           <option value="">Select Gender</option>
           <option>Male</option>
           <option>Female</option>
@@ -695,31 +695,31 @@ footer{flex-direction:column;gap:1rem;text-align:center}
       </div>
       <div class="form-group">
         <label class="form-label">Height</label>
-        <input type="text" class="form-input" placeholder="e.g. 5'8&quot;">
+        <input type="text" id="height" class="form-input" placeholder="e.g. 5'8&quot;">
       </div>
       <div class="form-group">
         <label class="form-label">Phone *</label>
-        <input type="tel" class="form-input" placeholder="+91 00000 00000">
+        <input type="tel" id="phone" class="form-input" placeholder="+91 00000 00000">
       </div>
       <div class="form-group">
         <label class="form-label">Email *</label>
-        <input type="email" class="form-input" placeholder="your@email.com">
+        <input type="email" id="email" class="form-input" placeholder="your@email.com">
       </div>
       <div class="form-group">
         <label class="form-label">City</label>
-        <input type="text" class="form-input" placeholder="Your city">
+        <input type="text" id="city" class="form-input" placeholder="Your city">
       </div>
       <div class="form-group">
         <label class="form-label">Instagram Handle</label>
-        <input type="text" class="form-input" placeholder="@username">
+        <input type="text" id="instagram" class="form-input" placeholder="@username">
       </div>
       <div class="form-group full">
         <label class="form-label">Skills</label>
-        <input type="text" class="form-input" placeholder="e.g. Acting, Dancing, Dialogue Delivery, Stunts">
+        <input type="text" id="skills" class="form-input" placeholder="e.g. Acting, Dancing, Dialogue Delivery, Stunts">
       </div>
       <div class="form-group full">
         <label class="form-label">Experience</label>
-        <textarea class="form-textarea" placeholder="Describe your acting/modeling experience, previous projects..."></textarea>
+        <textarea id="experience" class="form-textarea" placeholder="Describe your acting/modeling experience, previous projects..."></textarea>
       </div>
       <div class="form-group full">
         <label class="form-label">Upload Portfolio Photos</label>
@@ -740,7 +740,7 @@ footer{flex-direction:column;gap:1rem;text-align:center}
         </div>
       </div>
       <div class="form-group full">
-        <button class="btn-hero-primary" style="width:100%;padding:1.2rem;font-size:0.75rem;letter-spacing:0.25em" onclick="submitForm()">Submit Registration →</button>
+        <button id="submit_registration" class="btn-hero-primary" style="width:100%;padding:1.2rem;font-size:0.75rem;letter-spacing:0.25em" onclick="submitForm()">Submit Registration →</button>
       </div>
     </div>
   </div>
@@ -761,7 +761,7 @@ footer{flex-direction:column;gap:1rem;text-align:center}
         <div style="font-family:'Cinzel',serif;font-size:2rem;font-weight:900" class="gold-text">₹4,999</div>
         <div style="font-size:0.7rem;color:var(--textmuted);margin-bottom:1rem">per month</div>
         <div style="font-size:0.8rem;color:var(--textmuted);line-height:2">50 Profile Views / Month<br>Contact Access<br>Category Filters</div>
-        <button class="btn-hero-primary" style="margin-top:1.5rem;padding:0.9rem 2rem;font-size:0.7rem;letter-spacing:0.2em">Choose Starter</button>
+        <button id="submit_casting_starter" class="btn-hero-primary" style="margin-top:1.5rem;padding:0.9rem 2rem;font-size:0.7rem;letter-spacing:0.2em">Choose Starter</button>
       </div>
       <div style="background:linear-gradient(135deg,rgba(201,168,76,0.12),rgba(201,168,76,0.04));border:2px solid rgba(201,168,76,0.5);padding:1.5rem;text-align:center;position:relative">
         <div style="position:absolute;top:-1px;left:50%;transform:translateX(-50%);background:linear-gradient(135deg,var(--gold3),var(--gold));color:var(--black);font-size:0.6rem;letter-spacing:0.3em;text-transform:uppercase;padding:0.3rem 1.5rem;font-weight:700">Most Popular</div>
@@ -769,7 +769,7 @@ footer{flex-direction:column;gap:1rem;text-align:center}
         <div style="font-family:'Cinzel',serif;font-size:2rem;font-weight:900" class="gold-text">₹9,999</div>
         <div style="font-size:0.7rem;color:var(--textmuted);margin-bottom:1rem">per month</div>
         <div style="font-size:0.8rem;color:var(--textmuted);line-height:2">Unlimited Views<br>Full Portfolio Access<br>WhatsApp Connect<br>Priority Support</div>
-        <button class="btn-hero-primary" style="margin-top:1.5rem;padding:0.9rem 2rem;font-size:0.7rem;letter-spacing:0.2em">Choose Professional</button>
+        <button id="submit_casting_professional" class="btn-hero-primary" style="margin-top:1.5rem;padding:0.9rem 2rem;font-size:0.7rem;letter-spacing:0.2em">Choose Professional</button>
       </div>
     </div>
     <div style="text-align:center;margin-top:1.5rem;font-size:0.7rem;color:var(--textmuted)">Secure payment · Cancel anytime · Instant access</div>
@@ -793,9 +793,57 @@ function handleUpload(input,labelId){
   }
 }
 
-function submitForm(){
-  alert('✅ Registration submitted! Our team will review your profile and contact you within 48 hours. Welcome to the MKCinemas family!')
-  closeModal('modelModal')
+async function submitForm(){
+  const full_name = document.getElementById('full_name').value.trim();
+  const age = document.getElementById('age').value.trim();
+  const gender = document.getElementById('gender').value.trim();
+  const height = document.getElementById('height').value.trim();
+  const phone = document.getElementById('phone').value.trim();
+  const email = document.getElementById('email').value.trim();
+  const city = document.getElementById('city').value.trim();
+  const instagram = document.getElementById('instagram').value.trim();
+  const skills = document.getElementById('skills').value.trim();
+  const experience = document.getElementById('experience').value.trim();
+
+  if (!full_name || !age || !gender || !phone || !email) {
+    alert('Please fill in all required fields.');
+    return;
+  }
+
+  const { error } = await supabase.from('models').insert({
+    full_name,
+    age: parseInt(age, 10),
+    gender,
+    height: height || null,
+    phone,
+    email,
+    city: city || null,
+    instagram: instagram || null,
+    skills: skills || null,
+    experience: experience || null,
+  });
+
+  if (error) {
+    alert(error.message);
+    return;
+  }
+
+  alert('Registration submitted successfully!');
+
+  document.getElementById('full_name').value = '';
+  document.getElementById('age').value = '';
+  document.getElementById('gender').value = '';
+  document.getElementById('height').value = '';
+  document.getElementById('phone').value = '';
+  document.getElementById('email').value = '';
+  document.getElementById('city').value = '';
+  document.getElementById('instagram').value = '';
+  document.getElementById('skills').value = '';
+  document.getElementById('experience').value = '';
+  document.getElementById('photoUp').value = '';
+  document.getElementById('videoUp').value = '';
+  document.getElementById('photoLabel').textContent = 'JPG, PNG up to 10MB each · Max 10 photos';
+  document.getElementById('videoLabel').textContent = 'MP4, MOV up to 100MB · 1-3 min recommended';
 }
 
 // Scroll animations
