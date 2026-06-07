@@ -801,6 +801,60 @@ function handleUpload(input,labelId){
 }
 
 async function submitForm(){
+  // Get files
+const photoFiles = document.getElementById('photoUp').files;
+const videoFile = document.getElementById('videoUp').files[0];
+
+// Upload photos
+const photoUrls = [];
+
+for (const file of photoFiles) {
+  const fileName = `${Date.now()}-${file.name}`;
+
+  const { error: uploadError } = await supabaseclient
+    .storage
+    .from('model-photos')
+    .upload(fileName, file);
+
+  if (uploadError) {
+    alert(uploadError.message);
+    return;
+  }alert('photo-upoaded');
+
+  const { data } = supabaseclient
+    .storage
+    .from('model-photos')
+    .getPublicUrl(fileName);
+
+  photoUrls.push(data.publicUrl);
+}
+
+// Upload video
+let videoUrl = null;
+
+if (videoFile) {
+  const videoName = `${Date.now()}-${videoFile.name}`;
+
+  const { error: videoError } = await supabaseclient
+    .storage
+    .from('model-videos')
+    .upload(videoName, videoFile);
+
+  if (videoError) {
+    alert(videoError.message);
+    return;
+  }alert('video upoaded');
+
+  const { data } = supabaseclient
+    .storage
+    .from('model-videos')
+    .getPublicUrl(videoName);
+
+  videoUrl = data.publicUrl;
+}
+
+console.log(photoUrls);
+console.log(videoUrl);
   const full_name = document.getElementById('full_name').value.trim();
   const age = document.getElementById('age').value.trim();
   const gender = document.getElementById('gender').value.trim();
@@ -817,7 +871,10 @@ async function submitForm(){
     return;
   }
 
-  const { error } = await supabaseclient.from('models').insert({
+  // Save to database
+const { error } = await supabaseclient
+  .from('models')
+  .insert({
     full_name,
     age: parseInt(age, 10),
     gender,
@@ -828,6 +885,8 @@ async function submitForm(){
     instagram: instagram || null,
     skills: skills || null,
     experience: experience || null,
+    profile_photo: photoUrls||null,
+    portfolio_url: videoUrl||null
   });
 
   if (error) {
