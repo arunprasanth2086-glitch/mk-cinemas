@@ -776,10 +776,11 @@ footer{flex-direction:column;gap:1rem;text-align:center}
   </div>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
 <script>
-  const supabase = window.supabase.createClient(
+  const supabaseclient = window.supabase.createClient(
     'https://wpvnpzzfbtcjulvdrrur.supabase.co',
-    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Indwdm5wenpmYnRjanVsdmRycnVyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODA0MDk1NTEsImV4cCI6MjA5NTk4NTU1MX0.P8ay9ulNWmk8cYadUs3nFcg7W9GsCRh6fJ3Muysnyd0"
+    'sb_publishable_xr-ONS0teb1Qz_35O5XIsQ_XYtYm-f_'
   );
   </script>
 <script>
@@ -816,7 +817,7 @@ async function submitForm(){
     return;
   }
 
-  const { error } = await supabase.from('models').insert({
+  const { error } = await supabaseclient.from('models').insert({
     full_name,
     age: parseInt(age, 10),
     gender,
@@ -878,14 +879,13 @@ window.addEventListener('scroll',()=>{
   }
 })
 </script>
+<!-- <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script>
   const supabase = window.supabase.createClient(
     'https://wpvnpzzfbtcjulvdrrur.supabase.co',
-    'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Indwdm5wenpmYnRjanVsdmRycnVyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODA0MDk1NTEsImV4cCI6MjA5NTk4NTU1MX0.P8ay9ulNWmk8cYadUs3nFcg7W9GsCRh6fJ3Muysnyd0'
+    'sb_publishable_xr-ONS0teb1Qz_35O5XIsQ_XYtYm-f_'
   );
-  </script>
-
+  </script> -->
 </body>
 </html>
