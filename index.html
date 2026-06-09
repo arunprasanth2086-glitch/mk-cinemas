@@ -140,6 +140,37 @@ section{padding:7rem 4rem}
 .gallery-item:hover .gallery-inner{filter:opacity(0.25);transform:scale(1.05)}
 .gallery-overlay{position:absolute;inset:0;background:linear-gradient(135deg,rgba(201,168,76,0.15),transparent);opacity:0;transition:opacity 0.4s}
 .gallery-item:hover .gallery-overlay{opacity:1}
+.gallery-img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 0.6s ease}
+.gallery-item:hover .gallery-img{transform:scale(1.06)}
+
+/* AWARDS */
+.awards-row{display:grid;grid-template-columns:repeat(4,1fr);gap:4px;margin-top:3rem}
+.awards-row--compact{grid-template-columns:repeat(2,1fr);margin-top:1.5rem}
+.award-cell{overflow:hidden;aspect-ratio:16/10;position:relative;background:var(--darkgray)}
+.award-cell--tall{aspect-ratio:3/4}
+.award-cell img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 0.5s ease,filter 0.5s}
+.award-cell:hover img{transform:scale(1.04);filter:brightness(1.08)}
+.awards-inline{display:grid;grid-template-columns:1fr 1fr;gap:4px;margin:2.5rem 0}
+.services-awards{margin-top:4rem;padding-top:3rem;border-top:1px solid rgba(201,168,76,0.1)}
+
+/* FOUNDER */
+#founder{background:linear-gradient(180deg,var(--black2) 0%,var(--black) 100%);border-top:1px solid rgba(201,168,76,0.08);border-bottom:1px solid rgba(201,168,76,0.08)}
+.founder-grid{display:grid;grid-template-columns:minmax(280px,380px) 1fr;gap:5rem;align-items:start;margin-top:4rem}
+.founder-portrait{position:sticky;top:7rem}
+.founder-photo-frame{position:relative;padding:1rem;border:1px solid rgba(201,168,76,0.25);background:rgba(201,168,76,0.03)}
+.founder-photo-frame::after{content:'';position:absolute;inset:-0.6rem;border:1px solid rgba(201,168,76,0.12);pointer-events:none}
+.founder-photo{width:100%;aspect-ratio:3/4;object-fit:cover;object-position:center top;display:block}
+.founder-meta{margin-top:1.75rem;padding-top:1.5rem;border-top:1px solid rgba(201,168,76,0.15)}
+.founder-name{font-family:'Cinzel',serif;font-size:1.75rem;font-weight:700;letter-spacing:0.04em}
+.founder-role{font-size:0.62rem;letter-spacing:0.4em;color:var(--gold);text-transform:uppercase;margin-top:0.4rem}
+.founder-content{display:flex;flex-direction:column;gap:2rem}
+.founder-panel{padding:2.25rem 2.5rem;background:linear-gradient(135deg,rgba(201,168,76,0.05),rgba(201,168,76,0.01));border:1px solid rgba(201,168,76,0.12);position:relative}
+.founder-panel::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:linear-gradient(180deg,var(--gold3),var(--gold),var(--gold2))}
+.founder-panel-label{font-family:'Cinzel',serif;font-size:0.68rem;letter-spacing:0.35em;color:var(--gold);text-transform:uppercase;margin-bottom:1.25rem}
+.founder-panel-field{width:100%;min-height:140px;background:transparent;border:none;border-bottom:1px solid rgba(201,168,76,0.15);color:var(--text);font-family:'Cormorant Garamond',serif;font-size:1.2rem;line-height:1.95;padding:0 0 1rem;outline:none;resize:none;transition:border-color 0.3s}
+.founder-panel-field:focus{border-bottom-color:var(--gold)}
+.founder-panel-field::placeholder{color:rgba(153,153,153,0.55);font-style:italic}
+.founder-quote{margin-top:0.5rem;padding:1.5rem 0 0;border-top:1px solid rgba(201,168,76,0.1);font-family:'Cormorant Garamond',serif;font-size:1.05rem;font-style:italic;color:var(--gold3);letter-spacing:0.02em}
 
 /* CASTING */
 #casting{background:var(--black)}
@@ -226,7 +257,9 @@ footer{background:var(--black);border-top:1px solid rgba(201,168,76,0.1);padding
 nav{padding:1rem 1.5rem}
 .nav-links{display:none}
 section{padding:5rem 1.5rem}
-.about-grid,.contact-grid,.casting-intro{grid-template-columns:1fr}
+.about-grid,.contact-grid,.casting-intro,.founder-grid{grid-template-columns:1fr}
+.founder-portrait{position:static}
+.awards-row{grid-template-columns:repeat(2,1fr)}
 .services-grid{grid-template-columns:1fr 1fr}
 .proj-grid{grid-template-columns:1fr 1fr}
 .proj-card:first-child{grid-row:span 1;aspect-ratio:2/3}
@@ -258,6 +291,7 @@ footer{flex-direction:column;gap:1rem;text-align:center}
   <ul class="nav-links">
     <li><a href="#home">Home</a></li>
     <li><a href="#about">About</a></li>
+    <li><a href="#founder">Founder</a></li>
     <li><a href="#projects">Projects</a></li>
     <li><a href="#gallery">Gallery</a></li>
     <li><a href="#casting">Casting</a></li>
@@ -301,19 +335,16 @@ footer{flex-direction:column;gap:1rem;text-align:center}
   <div class="about-grid">
     <div class="about-visual fade-in">
       <div class="about-frame">
+        <img src="assets/awards/1.jpeg" alt="" class="founder-photo" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover">
         <div class="about-frame-inner"></div>
         <div class="about-frame-corner tl"></div>
         <div class="about-frame-corner tr"></div>
         <div class="about-frame-corner bl"></div>
         <div class="about-frame-corner br"></div>
-        <div class="about-frame-text">
-          <div class="about-year gold-text">MK</div>
-          <div class="about-since">Since 2019</div>
-          <div class="gold-line" style="width:60%;margin-top:1rem"></div>
-          <div style="text-align:center;margin-top:1rem">
-            <div style="font-family:'Cormorant Garamond',serif;font-size:1rem;color:var(--textmuted);font-style:italic;">"Crafting Cinematic<br>Masterpieces"</div>
-          </div>
-        </div>
+      </div>
+      <div class="awards-row awards-row--compact">
+        <div class="award-cell"><img src="assets/awards/2.jpeg" alt=""></div>
+        <div class="award-cell"><img src="assets/awards/3.jpeg" alt=""></div>
       </div>
       <div class="about-stat-grid">
         <div class="about-stat fade-in">
@@ -351,6 +382,37 @@ footer{flex-direction:column;gap:1rem;text-align:center}
           <div style="font-size:0.8rem;color:var(--textmuted)">Casting · Auditions<br>Portfolio · Management</div>
         </div>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOUNDER -->
+<section id="founder">
+  <div class="founder-grid">
+    <div class="founder-portrait fade-in">
+      <div class="founder-photo-frame">
+        <img src="assets/mkmk/headshot.jpeg" alt="Madurai Mani — Founder, MKCinemas Madurai" class="founder-photo">
+      </div>
+      <div class="founder-meta">
+        <div class="founder-name gold-text">Madurai Mani</div>
+        <div class="founder-role">Founder &amp; Creative Director · MKCinemas Madurai</div>
+      </div>
+    </div>
+    <div class="founder-content fade-in">
+      <div>
+        <div class="section-badge">Leadership</div>
+        <h2 class="section-title">About the <span class="gold-text">Founder</span></h2>
+        <p class="section-sub" style="margin-top:1rem">The vision behind every frame we create.</p>
+      </div>
+      <div class="founder-panel">
+        <div class="founder-panel-label">The Story</div>
+        <textarea id="founder_story" class="founder-panel-field" rows="6" placeholder="Share your journey — how MKCinemas Madurai began, the path you took, and the milestones that shaped the studio…">Born and raised in Madurai, I built MKCinemas with a single conviction — that authentic Tamil stories deserve world-class production. From our first casting call to full-scale film and web series projects, every decision has been guided by respect for the craft and the artists who bring it to life.</textarea>
+      </div>
+      <div class="founder-panel">
+        <div class="founder-panel-label">Vision &amp; Aim</div>
+        <textarea id="founder_aim" class="founder-panel-field" rows="5" placeholder="Describe the company's mission, creative goals, and what you aim to achieve for artists, audiences, and the industry…">To become South India's most trusted production and casting house — nurturing emerging talent, delivering cinematic excellence across movies, web series, and brand films, and putting Madurai on the global entertainment map.</textarea>
+      </div>
+      <div class="founder-quote">"Where Stories Become Legend"</div>
     </div>
   </div>
 </section>
@@ -397,6 +459,14 @@ footer{flex-direction:column;gap:1rem;text-align:center}
       <div class="service-icon">🎭</div>
       <div class="service-title gold-text">Audition Management</div>
       <div class="service-desc">End-to-end audition coordination — scheduling, screening, shortlisting, and talent discovery at scale.</div>
+    </div>
+  </div>
+  <div class="services-awards fade-in">
+    <div class="awards-row">
+      <div class="award-cell"><img src="assets/awards/1.jpeg" alt=""></div>
+      <div class="award-cell"><img src="assets/awards/2.jpeg" alt=""></div>
+      <div class="award-cell"><img src="assets/awards/3.jpeg" alt=""></div>
+      <div class="award-cell"><img src="assets/awards/4.jpeg" alt=""></div>
     </div>
   </div>
 </section>
@@ -468,17 +538,16 @@ footer{flex-direction:column;gap:1rem;text-align:center}
   <div class="centered fade-in">
     <div class="section-badge">Visual Archive</div>
     <h2 class="section-title">Behind the <span class="gold-text">Lens</span></h2>
-    <p class="section-sub" style="margin-top:1rem">A curated selection of our finest cinematic moments</p>
   </div>
   <div class="gallery-grid">
-    <div class="gallery-item"><div class="gallery-inner">🎬</div><div class="gallery-overlay"></div></div>
-    <div class="gallery-item"><div class="gallery-inner">🌟</div><div class="gallery-overlay"></div></div>
-    <div class="gallery-item"><div class="gallery-inner">📸</div><div class="gallery-overlay"></div></div>
-    <div class="gallery-item"><div class="gallery-inner">🎭</div><div class="gallery-overlay"></div></div>
-    <div class="gallery-item"><div class="gallery-inner">🎥</div><div class="gallery-overlay"></div></div>
-    <div class="gallery-item"><div class="gallery-inner">🏆</div><div class="gallery-overlay"></div></div>
-    <div class="gallery-item"><div class="gallery-inner">✨</div><div class="gallery-overlay"></div></div>
-    <div class="gallery-item"><div class="gallery-inner">🎞️</div><div class="gallery-overlay"></div></div>
+    <div class="gallery-item fade-in"><img src="assets/gallery/xyz.jpeg" alt="" class="gallery-img"><div class="gallery-overlay"></div></div>
+    <div class="gallery-item fade-in"><img src="assets/awards/3.jpeg" alt="" class="gallery-img"><div class="gallery-overlay"></div></div>
+    <div class="gallery-item fade-in"><img src="assets/awards/4.jpeg" alt="" class="gallery-img"><div class="gallery-overlay"></div></div>
+    <div class="gallery-item fade-in"><img src="assets/awards/1.jpeg" alt="" class="gallery-img"><div class="gallery-overlay"></div></div>
+    <div class="gallery-item fade-in"><img src="assets/awards/2.jpeg" alt="" class="gallery-img"><div class="gallery-overlay"></div></div>
+    <div class="gallery-item fade-in"><img src="assets/gallery/xyz.jpeg" alt="" class="gallery-img"><div class="gallery-overlay"></div></div>
+    <div class="gallery-item fade-in"><img src="assets/awards/4.jpeg" alt="" class="gallery-img"><div class="gallery-overlay"></div></div>
+    <div class="gallery-item fade-in"><img src="assets/awards/3.jpeg" alt="" class="gallery-img"><div class="gallery-overlay"></div></div>
   </div>
 </section>
 
@@ -502,6 +571,10 @@ footer{flex-direction:column;gap:1rem;text-align:center}
       </div>
       <div class="gold-line" style="margin:1.5rem 0"></div>
       <button class="btn-gold" style="width:100%;padding:1rem;font-size:0.75rem;letter-spacing:0.2em" onclick="openModal('castModal')">Unlock Full Database →</button>
+      <div class="awards-inline fade-in">
+        <div class="award-cell"><img src="assets/awards/1.jpeg" alt=""></div>
+        <div class="award-cell"><img src="assets/awards/4.jpeg" alt=""></div>
+      </div>
     </div>
   </div>
   <div class="cast-profiles" style="position:relative">
@@ -555,6 +628,9 @@ footer{flex-direction:column;gap:1rem;text-align:center}
       <div class="booking-desc">Schedule your audition slot with our casting directors. Prepare your portfolio and performance piece.</div>
       <input type="date" id="audition_date" class="date-input" placeholder="Select Date">
       <input type="time" id="audition_time" class="date-input" placeholder="Select Time">
+      <input type="text" id="audition_name" class="date-input" placeholder="Your Name">
+      <input type="tel" id="audition_phone" class="date-input" placeholder="+91 00000 00000">
+      <input type="email" id="audition_email" class="date-input" placeholder="your@email.com">
       <button id="submit_audition_booking" class="btn-gold" style="width:100%;padding:0.9rem;font-size:0.7rem;letter-spacing:0.2em">Book Audition Slot</button>
     </div>
     <div class="booking-card fade-in" style="border-color:rgba(201,168,76,0.4);background:rgba(201,168,76,0.03)">
@@ -563,6 +639,9 @@ footer{flex-direction:column;gap:1rem;text-align:center}
       <div class="booking-desc">Book our studio or on-location ad shoot services. Premium equipment, experienced crew included.</div>
       <input type="date" id="ad_shoot_date" class="date-input">
       <input type="text" id="ad_shoot_brand_name" class="date-input" placeholder="Brand / Product Name" style="background:rgba(255,255,255,0.03);border:1px solid rgba(201,168,76,0.2);color:var(--text);font-family:'Montserrat',sans-serif;font-size:0.8rem;padding:0.7rem 1rem;outline:none;width:100%;margin-bottom:1rem">
+      <input type="text" id="ad_shoot_name" class="date-input" placeholder="Your Name">
+      <input type="tel" id="ad_shoot_phone" class="date-input" placeholder="+91 00000 00000">
+      <input type="email" id="ad_shoot_email" class="date-input" placeholder="your@email.com">
       <button id="submit_ad_shoot_quote" class="btn-gold" style="width:100%;padding:0.9rem;font-size:0.7rem;letter-spacing:0.2em">Request Shoot Quote</button>
     </div>
     <div class="booking-card fade-in">
@@ -571,6 +650,9 @@ footer{flex-direction:column;gap:1rem;text-align:center}
       <div class="booking-desc">Discuss your web series concept with our creative producers. From script to streaming strategy.</div>
       <input type="date" id="web_series_consult_date" class="date-input">
       <input type="text" id="web_series_project_title" class="date-input" placeholder="Project Title" style="background:rgba(255,255,255,0.03);border:1px solid rgba(201,168,76,0.2);color:var(--text);font-family:'Montserrat',sans-serif;font-size:0.8rem;padding:0.7rem 1rem;outline:none;width:100%;margin-bottom:1rem">
+      <input type="text" id="web_series_name" class="date-input" placeholder="Your Name">
+      <input type="tel" id="web_series_phone" class="date-input" placeholder="+91 00000 00000">
+      <input type="email" id="web_series_email" class="date-input" placeholder="your@email.com">
       <button id="submit_web_series_consultation" class="btn-gold" style="width:100%;padding:0.9rem;font-size:0.7rem;letter-spacing:0.2em">Schedule Consultation</button>
     </div>
   </div>
@@ -612,6 +694,10 @@ footer{flex-direction:column;gap:1rem;text-align:center}
             <div class="contact-item-val">39, 2nd Floor, Nehru Nagar, Bypass Road,<br>Madurai – 625016, Tamil Nadu</div>
           </div>
         </div>
+      </div>
+      <div class="awards-row awards-row--compact fade-in" style="margin-top:2.5rem">
+        <div class="award-cell"><img src="assets/awards/2.jpeg" alt=""></div>
+        <div class="award-cell"><img src="assets/awards/3.jpeg" alt=""></div>
       </div>
       <div class="social-row">
         <a class="social-btn" href="#" title="Instagram">📷</a>
@@ -911,6 +997,20 @@ const { error } = await supabaseclient
   document.getElementById('photoLabel').textContent = 'JPG, PNG up to 10MB each · Max 10 photos';
   document.getElementById('videoLabel').textContent = 'MP4, MOV up to 100MB · 1-3 min recommended';
 }
+
+// Founder story & aim — persists in browser for easy editing
+;(function(){
+  const storyEl=document.getElementById('founder_story')
+  const aimEl=document.getElementById('founder_aim')
+  if(!storyEl||!aimEl)return
+  const sk='mkc_founder_story',ak='mkc_founder_aim'
+  const savedStory=localStorage.getItem(sk)
+  const savedAim=localStorage.getItem(ak)
+  if(savedStory)storyEl.value=savedStory
+  if(savedAim)aimEl.value=savedAim
+  storyEl.addEventListener('input',()=>localStorage.setItem(sk,storyEl.value))
+  aimEl.addEventListener('input',()=>localStorage.setItem(ak,aimEl.value))
+})()
 
 // Scroll animations
 const observer=new IntersectionObserver((entries)=>{
